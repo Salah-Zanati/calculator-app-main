@@ -1,0 +1,385 @@
+/* Main - default - Theme 1 */
+:root {
+    /* Fonts Setting */
+    --Font-size: 32px;
+    --Font-family: 'League Spartan', sans-serif; 
+    --Font-weight-main: 700;
+    /* Colors: */
+    /* Backgrounds */
+    --main-bg: hsl(222, 26%, 31%); /* Very dark desaturated blue */
+    --toggle-bg-keypad-bg: hsl(223, 31%, 20%); /* Very dark desaturated blue */
+    --screen-bg: hsl(224, 36%, 15%); /* Very dark desaturated blue */
+    /* Keys */
+    --key-bg-1: hsl(225, 21%, 49%); /* Desaturated dark blue */
+    --key-bg-hover-1: hsl(225, 21%, 70%);
+    --key-shadow-1: hsl(224, 28%, 35%); /* Desaturated dark blue */
+    --key-bg-2-toggle: hsl(6, 63%, 50%); /* Red */
+    --key-bg-hover-2: hsl(6, 63%, 60%);
+    --key-shadow-2: hsl(6, 70%, 34%); /* Dark red */
+    --key-bg-3: hsl(30, 25%, 89%); /* Light grayish orange */
+    --key-bg-hover-3: white;
+    --key-shadow-3: hsl(28, 16%, 65%); /* Grayish orange */
+    /* Text */
+    --Secondary-color: hsl(221, 14%, 31%); /* Very dark grayish blue */
+    --Text-color: hsl(0, 0%, 100%);
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: var(--Font-family);
+    font-weight: var(--Font-weight-main);
+    font-size: var(--Font-size);
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--main-bg);
+    display: grid;
+    grid-template-columns: 3fr 4fr 3fr;
+    grid-template-rows: 1fr 8fr 1fr;
+    grid-template-areas: 
+    ". . ."
+    ". parting ."
+    ". . .";
+}
+@media (max-width: 991px) {
+    .container {
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-rows: 1fr 10fr 1fr;
+    }
+}
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr 20fr 1fr;
+        grid-template-rows: 1fr 20fr 1fr;
+    }
+}
+
+.container .parting-div {
+    grid-area: parting;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+/* Styling the nav bar */
+/* =================== */
+.container nav {
+    flex-basis: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.container nav .logo {
+    color: var(--Text-color);
+    font-size: 30px;
+}
+.container nav .themes {
+    background-color: var(--toggle-bg-keypad-bg);
+    width: 70px;
+    height: 25px;
+    position: relative;
+    border-radius: 12.5px;
+    padding: 5px;
+    cursor: pointer;
+    /* transition: .3s; */
+}
+.container nav .themes::before {
+    content: 'THEME';
+    position: absolute;
+    font-size: 12px;
+    letter-spacing: 1px;
+    left: -50px;
+    top: 55%;
+    color: var(--Text-color);
+    font-weight: normal;
+    transform: translateY(-50%);
+}
+.container nav .themes::after {
+    content: ' 1 2 3 ';
+    position: absolute;
+    font-size: 13px;
+    letter-spacing: 6px;
+    left: 13%;
+    top: -35%;
+    color: var(--Text-color);
+    font-weight: normal;
+    transform: translateY(-50%);
+}
+.container nav .themes span {
+    width: 15px;
+    height: 15px;
+    background-color: var(--key-bg-2-toggle);
+    position: absolute;
+    border-radius: 10px;
+    transition: .3s;
+
+}
+/* =================== */
+/* Styling the input textbox */
+/* =================== */
+.container .input {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    border-radius: 10px;
+}
+.container .input input {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    font-size: 40px;
+    font-weight: 700;
+    padding: 10px 30px 0;
+    background-color: var(--screen-bg);
+    color: var(--Text-color);
+    border: none;
+    outline: none;
+}
+/* =================== */
+/* Styling the nums box */
+/* =================== */
+.container .nums {
+    flex-basis: 80%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 25px;
+    background: var(--toggle-bg-keypad-bg);
+    padding: 40px 30px;
+    border-radius: 10px;
+}
+@media (max-width: 425px) {
+    .container .nums {
+        gap: 15px;
+    }
+}
+.container .nums span,
+.container .nums button {
+    background-color: var(--key-bg-3);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 0 var(--key-shadow-3);
+    color: var(--Secondary-color);
+    font-size: 40px;
+    border: none;
+    user-select: none;
+    cursor: pointer;
+    padding-top: 5px;   
+    transition: .3s;
+}
+.container .nums span:hover {
+    background-color: var(--key-bg-hover-3);
+}
+.container .nums .del,
+.container .nums .reset {
+    background-color: var(--key-bg-1);
+    box-shadow: 0 5px 0 var(--key-shadow-1);
+    color: var(--Text-color);
+    font-size: 30px;
+    font-weight: 700;
+}
+.container .nums .del:hover,
+.container .nums .reset:hover {
+    background-color: var(--key-bg-hover-1);
+}
+.container .nums .res {
+    background-color: var(--key-bg-2-toggle);
+    box-shadow: 0 5px 0 var(--key-shadow-2);
+    color: var(--Text-color);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+@media (max-width: 425px) {
+
+    .container .nums span,
+    .container .nums button {
+        font-size: 30px;
+        border-radius: 7px;
+    }
+    .container .nums .del,
+    .container .nums .reset,
+    .container .nums .res {
+        font-size: 20px;
+    }
+}
+.container .nums .res:hover {
+    background-color: var(--key-bg-hover-2);
+}
+.container .nums button.res {
+    grid-area: 5 / 3 / 6 / 5;
+}
+.container .nums button.reset {
+    grid-area: 5 / 1 / 6 / 3;
+}
+.num-0 { order: 14; }
+.num-1 { order: 9; }
+.num-2 { order: 10; }
+.num-3 { order: 11; }  
+.num-4 { order: 5; }
+.num-5 { order: 6; } 
+.num-6 { order: 7; }
+.num-7 { order: 1; }
+.num-8 { order: 2; }
+.num-9 { order: 3; }
+.del { order: 4; }
+.plus { order: 8; }
+.minus { order: 12; }
+.multiply { order: 15; }
+.portion { order: 14; }
+.point { order: 13; }
+/* ################################################ */
+/* ################################################ */
+/* Styling the theme 2 */
+:root {
+    /* Backgrounds */
+    --th2-main-bg: hsl(268, 75%, 9%); /* Very dark violet */
+    --th2-toggle-bg-keypad-bg-screen-bg: hsl(268, 71%, 12%); /* Very dark violet */
+    /* Keys */
+    --th2-key-bg-1: hsl(281, 89%, 26%); /* Dark violet */
+    --th2-key-bg-hover-1: hsl(281, 89%, 45%);
+    --th2-key-shadow-1: hsl(285, 91%, 52%); /* Vivid magenta */
+    --th2-key-bg-2-toggle: hsl(176, 100%, 44%); /* Pure cyan */
+    --th2-key-bg-hover-2: hsl(176, 100%, 74%);
+    --th2-key-shadow-2: hsl(177, 92%, 70%); /* Soft cyan */
+    --th2-key-bg-3: hsl(268, 47%, 21%); /* Very dark violet */
+    --th2-key-bg-hover-3: hsl(268, 47%, 51%);
+    --th2-key-shadow-3: hsl(290, 70%, 36%); /* Dark magenta */
+    /* Text */
+    --th2-Text-color: hsl(52, 100%, 62%);
+    --th2-Secondary-color: hsl(198, 20%, 13%);
+    --th2-Tert-color: hsl(0, 0%, 100%);
+}
+.container.theme2 {
+    background-color: var(--th2-main-bg);
+}
+.container.theme2 nav .logo {
+    color: var(--th2-Text-color);
+}
+.container.theme2 nav .themes {
+    background-color: var(--th2-toggle-bg-keypad-bg-screen-bg);
+}
+.container.theme2 nav .themes::after,
+.container.theme2 nav .themes::before  {
+    color: var(--th2-Text-color);
+}
+.container.theme2 nav .themes span {
+    transform: translateX(130%);
+    background-color: var(--th2-key-bg-2-toggle);
+}
+.container.theme2 .input input {
+    background-color: var(--th2-toggle-bg-keypad-bg-screen-bg);
+    color: var(--th2-Text-color);
+}
+.container.theme2 .nums {
+    background-color: var(--th2-toggle-bg-keypad-bg-screen-bg);
+}
+.container.theme2 .nums span,
+.container.theme2 .nums button {
+    background-color: var(--th2-key-bg-3);
+    box-shadow: 0 5px 0 var(--th2-key-shadow-3);
+    color: var(--th2-Text-color);
+}
+.container.theme2 .nums span:hover {
+    background-color: var(--th2-key-bg-hover-3);
+}
+.container.theme2 .nums .del,
+.container.theme2 .nums .reset {
+    background-color: var(--th2-key-bg-1);
+    box-shadow: 0 5px 0 var(--th2-key-shadow-1);
+    color: var(--th2-Tert-color);
+}
+.container.theme2 .nums .del:hover,
+.container.theme2 .nums .reset:hover {
+    background-color: var(--th2-key-bg-hover-1);
+}
+.container.theme2 .nums .res {
+    color: var(--th2-Secondary-color);
+    background-color: var(--th2-key-bg-2-toggle);
+    box-shadow: 0 5px 0 var(--th2-key-shadow-2);
+}
+.container.theme2 .nums .res:hover {
+    background-color: var(--th2-key-bg-hover-2);
+}
+/* ################################################ */
+/* ################################################ */
+/* Styling the theme 2 */
+:root {
+    /* Backgrounds */
+    --th3-main-bg: hsl(0, 0%, 90%); /* Light gray */
+    --th3-toggle-bg-keypad-bg: hsl(0, 5%, 81%); /* Grayish red */
+    --th3-screen-bg: hsl(0, 0%, 93%); /* Very light gray */
+    /* Keys */
+    --th3-key-bg-1: hsl(185, 42%, 37%); /* Dark moderate cyan */
+    --th3-key-bg-hover-1: hsl(185, 42%, 57%);
+    --th3-key-shadow-1: hsl(185, 58%, 25%); /* Very dark cyan */
+    --th3-key-bg-2-toggle: hsl(25, 98%, 40%); /* Orange */
+    --th3-key-bg-hover-2: hsl(25, 98%, 60%);
+    --th3-key-shadow-2: hsl(25, 99%, 27%); /* Dark orange */
+    --th3-key-bg-3: hsl(45, 7%, 89%); /* Light grayish yellow */
+    --th3-key-bg-hover-3: white;
+    --th3-key-shadow-3: hsl(35, 11%, 61%); /* Dark grayish orange */
+    /* Text */
+    --th3-Text-color: hsl(60, 10%, 19%); /* Very dark grayish yellow */
+    --th3-Secondary-color: hsl(0, 0%, 100%);
+}
+.container.theme3 {
+    background-color: var(--th3-main-bg);
+}
+.container.theme3 nav .logo {
+    color: var(--th3-Text-color);
+}
+.container.theme3 nav .themes {
+    background-color: var(--th3-toggle-bg-keypad-bg);
+}
+.container.theme3 nav .themes::after,
+.container.theme3 nav .themes::before {
+    color: var(--th3-Text-color);
+}
+.container.theme3 nav .themes span {
+    transform: translateX(285%);
+    background-color: var(--th3-key-bg-2-toggle);
+}
+.container.theme3 .input input {
+    background-color: var(--th3-screen-bg);
+    color: var(--th3-Text-color);
+}
+.container.theme3 .nums {
+    background-color: var(--th3-toggle-bg-keypad-bg);
+}
+.container.theme3 .nums span,
+.container.theme3 .nums button {
+    background-color: var(--th3-key-bg-3);
+    box-shadow: 0 5px 0 var(--th3-key-shadow-3);
+    color: var(--th3-Text-color);
+}
+.container.theme3 .nums span:hover {
+    background-color: var(--th3-key-bg-hover-3);
+}
+.container.theme3 .nums .del,
+.container.theme3 .nums .reset {
+    background-color: var(--th3-key-bg-1);
+    box-shadow: 0 5px 0 var(--th3-key-shadow-1);
+    color: var(--th3-Secondary-color);
+}
+.container.theme3 .nums .del:hover,
+.container.theme3 .nums .reset:hover {
+    background-color: var(--th3-key-bg-hover-1);
+}
+.container.theme3 .nums .res {
+    color: var(--th3-Secondary-color);
+    background-color: var(--th3-key-bg-2-toggle);
+    box-shadow: 0 5px 0 var(--th3-key-shadow-2);
+}
+.container.theme3 .nums .res:hover {
+    background-color: var(--th3-key-bg-hover-2);
+}
+

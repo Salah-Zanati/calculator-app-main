@@ -1,0 +1,30 @@
+/* Theme 2 */
+:root {
+    /* Backgrounds */
+    --main-bg: hsl(268, 75%, 9%); /* Very dark violet */
+    --toggle-bg-keypad-bg-screen-bg: hsl(268, 71%, 12%); /* Very dark violet */
+    /* Keys */
+    --key-bg-1: hsl(281, 89%, 26%); /* Dark violet */
+    --key-shadow-1: hsl(285, 91%, 52%); /* Vivid magenta */
+    --key-bg-2-toggle: hsl(176, 100%, 44%); /* Pure cyan */
+    --key-shadow-2: hsl(177, 92%, 70%); /* Soft cyan */
+    --key-bg-3: hsl(268, 47%, 21%); /* Very dark violet */
+    --key-shadow-3: hsl(290, 70%, 36%); /* Dark magenta */
+    /* Text */
+    --Tert-color: hsl(52, 100%, 62%);
+    --Secondary-color: hsl(198, 20%, 13%);
+    --Text-color: hsl(0, 0%, 100%);
+}
+.container.theme2 {}
+.container.theme2 nav {}
+.container.theme2 nav .logo {}
+.container.theme2 nav .themes {}
+.container.theme2 nav .themes .themes-nums {}
+.container.theme2 nav .themes .themes-nums span {}
+.container.theme2 nav .themes .move-box {}
+.container.theme2 .input {}
+.container.theme2 .input input {}
+.container.theme2 .nums {}
+.container.theme2 .nums span {}
+.container.theme2 .res-res {}
+.container.theme2 .res-res button {}

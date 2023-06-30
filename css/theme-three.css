@@ -1,0 +1,30 @@
+/* Theme 3 */
+:root {
+    /* Backgrounds */
+    --th3-main-bg: hsl(0, 0%, 90%); /* Light gray */
+    --th3-toggle-bg-keypad-bg: hsl(0, 5%, 81%); /* Grayish red */
+    --th3-screen-bg: hsl(0, 0%, 93%); /* Very light gray */
+    /* Keys */
+    --th3-key-bg-1: hsl(185, 42%, 37%); /* Dark moderate cyan */
+    --th3-key-shadow-1: hsl(185, 58%, 25%); /* Very dark cyan */
+    --th3-key-bg-2-toggle: hsl(25, 98%, 40%); /* Orange */
+    --th3-key-shadow-2: hsl(25, 99%, 27%); /* Dark orange */
+    --th3-key-bg-3: hsl(45, 7%, 89%); /* Light grayish yellow */
+    --th3-key-shadow-3: hsl(35, 11%, 61%); /* Dark grayish orange */
+    /* Text */
+    --th3-Secondary-color: hsl(60, 10%, 19%); /* Very dark grayish yellow */
+    --th3-Text-color: hsl(0, 0%, 100%);
+}
+.container.theme3 {}
+.container.theme3 nav {}
+.container.theme3 nav .logo {}
+.container.theme3 nav .themes {}
+.container.theme3 nav .themes .themes-nums {}
+.container.theme3 nav .themes .themes-nums span {}
+.container.theme3 nav .themes .move-box {}
+.container.theme3 .input {}
+.container.theme3 .input input {}
+.container.theme3 .nums {}
+.container.theme3 .nums span {}
+.container.theme3 .res-res {}
+.container.theme3 .res-res button {}
