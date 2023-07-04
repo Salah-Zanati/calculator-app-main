@@ -7,19 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
     <title>Frontend Mentor | Calculator app</title>
-    <style>
-        .attribution {
-            font-size: 11px;
-            position: absolute;
-            bottom: 5px;
-            left: 5px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .attribution a {
-            color: hsl(228, 45%, 44%);
-        }
-    </style>
     <!-- Normalize Style -->
     <link rel="stylesheet" href="./css/normalize.css">
     <!-- Main Style And Anothers -->
@@ -68,8 +55,29 @@
         </div>
     </div>
     <div class="attribution">
+        <style>
+            .attribution {
+                font-size: 11px;
+                position: absolute;
+                bottom: 5px;
+                left: 5px;
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: white;
+                padding: 5px;
+                border-radius: 5px;
+            }
+        
+            .attribution a {
+                color: hsl(228, 45%, 44%);
+            }
+        </style>
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-        Coded by <a href="https://github.com/Salah-Zanati">Salah Zanati</a>.
+        Coded by <a href="https://www.linkedin.com/in/salah-zanati-419a1024a/">Salah Zanati</a>.
+        <script>
+            setTimeout(() => {
+                document.querySelector(".attribution").style.display = "none";
+            }, 10000);
+        </script>
     </div>
 </body>
 
